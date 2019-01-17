@@ -1,0 +1,54 @@
+
+Install and setup a MultiChain 2 node on docker
+-----------------------------------------------
+
+Example: Node for AustriaPro Testchain "apro-lab-1"
+
+Step 1:
+install docker, see
+https://docs.docker.com/install/linux/docker-ce/ubuntu/
+
+Step 2:
+execute
+>>> docker pull cbaumann/multichain-2-base
+
+Step 3:
+create directory (eg. /node-austriapro) and copy following files there
+* Dockerfile 
+* runchain.sh 
+
+Step 4:
+edit "runchain.sh" as needed (change rpcpassword)
+
+Step 5:
+in the created directory execute:
+>>> docker build -t multichain-2-apro-test-1 .
+
+Step 6:
+create a data directory for the blockchain
+>>> mkdir /tmp/multichain2
+
+Step 6:
+start the node for the first time, execute:
+>>> docker run -d -p 17176:7176 -v /tmp/multichain2:/root/.multichain multichain-2-apro-test-1
+
+Step 7:
+look into file /tmp/multichain2/apro-lab-at/debug.log
+find this line "mchn: Minimal blockchain parameter set is created, default address: 1Dgv1STL...etc..."
+
+send the address to us (austriapro), we will activate the address.
+
+Step 8:
+start the node again (as in Step 6)
+>>> docker run ... 
+
+Optionally:
+check node by viewing log file
+>>> tail -f /tmp/multichain2/apro-lab-1/debug.log
+
+
+
+
+
+
+
