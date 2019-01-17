@@ -1,0 +1,153 @@
+called url: http://blockchains.web-lab.at:7431/assets/balance/3Mthq2HwiU4V2AqUmCsT9BV6UTB9MUV5eU9
+status: 200
+error: 
+raw response: 
+{
+  "address" : "3Mthq2HwiU4V2AqUmCsT9BV6UTB9MUV5eU9",
+  "balances" : [ {
+    "assetId" : "GavX8vzkqv7ew3J2V1PMC2TCzoGM2Lt7amms2G3NaMU2",
+    "balance" : 1000,
+    "reissuable" : true,
+    "minSponsoredAssetFee" : null,
+    "sponsorBalance" : null,
+    "quantity" : 1000000,
+    "issueTransaction" : {
+      "type" : 3,
+      "id" : "GavX8vzkqv7ew3J2V1PMC2TCzoGM2Lt7amms2G3NaMU2",
+      "sender" : "3MpZXYBKdsMKGWzNxmNSm27QPYHmev7jB5K",
+      "senderPublicKey" : "C48CJHD7dDUqkLSXT76U4eaxKSzHYXnq9xxfx3ki6PvG",
+      "fee" : 100000000,
+      "timestamp" : 1540223100854,
+      "signature" : "2QvHu4issnmyravLcpC4vgfzfhmPgumwDZbRC8ucbd1qnDEvf6s6PDt6yXg826g3TZUTzdyVAAd3izUJtK469b95",
+      "version" : 1,
+      "assetId" : "GavX8vzkqv7ew3J2V1PMC2TCzoGM2Lt7amms2G3NaMU2",
+      "name" : "BATT1",
+      "quantity" : 1000000,
+      "reissuable" : true,
+      "decimals" : 2,
+      "description" : "baumann.at Token 1"
+    }
+  }, {
+    "assetId" : "FH6t21twyAwDeR7J2TTp7zQEAq5rXBvyfWvK8QMvfRAZ",
+    "balance" : 50000000,
+    "reissuable" : true,
+    "minSponsoredAssetFee" : null,
+    "sponsorBalance" : null,
+    "quantity" : 100000000,
+    "issueTransaction" : {
+      "type" : 3,
+      "id" : "FH6t21twyAwDeR7J2TTp7zQEAq5rXBvyfWvK8QMvfRAZ",
+      "sender" : "3MpZXYBKdsMKGWzNxmNSm27QPYHmev7jB5K",
+      "senderPublicKey" : "C48CJHD7dDUqkLSXT76U4eaxKSzHYXnq9xxfx3ki6PvG",
+      "fee" : 100000000,
+      "timestamp" : 1547657041428,
+      "signature" : "uQpcsxE91ZW2TiBq8GH5z7t6ZDGCG95rGvbXVSBDjP78doiPPQb7xneUzzPqLBYoXzwExWXEDyNBe8vvghN96x8",
+      "version" : 1,
+      "assetId" : "FH6t21twyAwDeR7J2TTp7zQEAq5rXBvyfWvK8QMvfRAZ",
+      "name" : "AustriaPro V1",
+      "quantity" : 100000000,
+      "reissuable" : true,
+      "decimals" : 2,
+      "description" : "AustriaPro Test Token V1"
+    }
+  } ]
+}
+array(2) {
+  ["address"]=>
+  string(35) "3Mthq2HwiU4V2AqUmCsT9BV6UTB9MUV5eU9"
+  ["balances"]=>
+  array(2) {
+    [0]=>
+    array(7) {
+      ["assetId"]=>
+      string(44) "GavX8vzkqv7ew3J2V1PMC2TCzoGM2Lt7amms2G3NaMU2"
+      ["balance"]=>
+      int(1000)
+      ["reissuable"]=>
+      bool(true)
+      ["minSponsoredAssetFee"]=>
+      NULL
+      ["sponsorBalance"]=>
+      NULL
+      ["quantity"]=>
+      int(1000000)
+      ["issueTransaction"]=>
+      array(14) {
+        ["type"]=>
+        int(3)
+        ["id"]=>
+        string(44) "GavX8vzkqv7ew3J2V1PMC2TCzoGM2Lt7amms2G3NaMU2"
+        ["sender"]=>
+        string(35) "3MpZXYBKdsMKGWzNxmNSm27QPYHmev7jB5K"
+        ["senderPublicKey"]=>
+        string(44) "C48CJHD7dDUqkLSXT76U4eaxKSzHYXnq9xxfx3ki6PvG"
+        ["fee"]=>
+        int(100000000)
+        ["timestamp"]=>
+        float(1540223100854)
+        ["signature"]=>
+        string(88) "2QvHu4issnmyravLcpC4vgfzfhmPgumwDZbRC8ucbd1qnDEvf6s6PDt6yXg826g3TZUTzdyVAAd3izUJtK469b95"
+        ["version"]=>
+        int(1)
+        ["assetId"]=>
+        string(44) "GavX8vzkqv7ew3J2V1PMC2TCzoGM2Lt7amms2G3NaMU2"
+        ["name"]=>
+        string(5) "BATT1"
+        ["quantity"]=>
+        int(1000000)
+        ["reissuable"]=>
+        bool(true)
+        ["decimals"]=>
+        int(2)
+        ["description"]=>
+        string(18) "baumann.at Token 1"
+      }
+    }
+    [1]=>
+    array(7) {
+      ["assetId"]=>
+      string(44) "FH6t21twyAwDeR7J2TTp7zQEAq5rXBvyfWvK8QMvfRAZ"
+      ["balance"]=>
+      int(50000000)
+      ["reissuable"]=>
+      bool(true)
+      ["minSponsoredAssetFee"]=>
+      NULL
+      ["sponsorBalance"]=>
+      NULL
+      ["quantity"]=>
+      int(100000000)
+      ["issueTransaction"]=>
+      array(14) {
+        ["type"]=>
+        int(3)
+        ["id"]=>
+        string(44) "FH6t21twyAwDeR7J2TTp7zQEAq5rXBvyfWvK8QMvfRAZ"
+        ["sender"]=>
+        string(35) "3MpZXYBKdsMKGWzNxmNSm27QPYHmev7jB5K"
+        ["senderPublicKey"]=>
+        string(44) "C48CJHD7dDUqkLSXT76U4eaxKSzHYXnq9xxfx3ki6PvG"
+        ["fee"]=>
+        int(100000000)
+        ["timestamp"]=>
+        float(1547657041428)
+        ["signature"]=>
+        string(87) "uQpcsxE91ZW2TiBq8GH5z7t6ZDGCG95rGvbXVSBDjP78doiPPQb7xneUzzPqLBYoXzwExWXEDyNBe8vvghN96x8"
+        ["version"]=>
+        int(1)
+        ["assetId"]=>
+        string(44) "FH6t21twyAwDeR7J2TTp7zQEAq5rXBvyfWvK8QMvfRAZ"
+        ["name"]=>
+        string(13) "AustriaPro V1"
+        ["quantity"]=>
+        int(100000000)
+        ["reissuable"]=>
+        bool(true)
+        ["decimals"]=>
+        int(2)
+        ["description"]=>
+        string(24) "AustriaPro Test Token V1"
+      }
+    }
+  }
+}
