@@ -13,14 +13,14 @@ nonce = 0
 balances:
   Waves = 50000000000
   GavX8vzkqv7ew3J2V1PMC2TCzoGM2Lt7amms2G3NaMU2 (BATT1) = 1000
-  FH6t21twyAwDeR7J2TTp7zQEAq5rXBvyfWvK8QMvfRAZ (AustriaPro V1) = 50000000
+  FH6v21twyAwDeR7J2TTp7zQEAq5rXBvyfWvK8QMvfRAZ (AustriaPro V1) = 50000000
 ------------------------------------------
 Balance 0bsnetwork Coin: 500
 Balance AustriaPro Token V1: 50
 ------------------------------------------
 Info about Asset:
 status = Issued
-assetId = FH6t21twyAwDeR7J2TTp7zQEAq5rXBvyfWvK8QMvfRAZ
+assetId = FH6v21twyAwDeR7J2TTp7zQEAq5rXBvyfWvK8QMvfRAZ
 issuer = 3MpZXYBKdsMKGWzNxmNSm27QPYHmev7jB5K
 name = AustriaPro V1
 description = AustriaPro Test Token V1
