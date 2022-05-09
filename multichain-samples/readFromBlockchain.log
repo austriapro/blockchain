@@ -1,405 +1,265 @@
+### nodeversion: 20201901
+### protocolversion: 20013
 ##### INFO
-array(28) {
-  ["version"]=>
-  string(5) "2.0.1"
-  ["nodeversion"]=>
-  int(20001901)
-  ["protocolversion"]=>
-  int(20003)
-  ["chainname"]=>
-  string(10) "apro-lab-1"
-  ["description"]=>
-  string(21) "MultiChain apro-lab-1"
-  ["protocol"]=>
+T:\dev9\mc\mc-API_samples\readFromBlockchain.php:38:
+array(31) {
+  'version' =>
+  string(5) "2.2.1"
+  'nodeversion' =>
+  int(20201901)
+  'edition' =>
+  string(9) "Community"
+  'protocolversion' =>
+  int(20013)
+  'chainname' =>
+  string(10) "apro-lab-2"
+  'description' =>
+  string(21) "MultiChain apro-lab-2"
+  'protocol' =>
   string(10) "multichain"
-  ["port"]=>
-  int(7177)
-  ["setupblocks"]=>
+  'port' =>
+  int(7771)
+  'setupblocks' =>
   int(60)
-  ["nodeaddress"]=>
-  string(26) "apro-lab-1@172.17.0.5:7177"
-  ["burnaddress"]=>
-  string(38) "1XXXXXXWUqXXXXXXRtXXXXXXLtXXXXXXZENSCy"
-  ["incomingpaused"]=>
+  'nodeaddress' =>
+  string(26) "apro-lab-2@172.17.0.7:7771"
+  'burnaddress' =>
+  string(38) "1XXXXXXXNxXXXXXXz4XXXXXXciXXXXXXbBqXoA"
+  'incomingpaused' =>
   bool(false)
-  ["miningpaused"]=>
+  'miningpaused' =>
   bool(false)
-  ["offchainpaused"]=>
+  'offchainpaused' =>
   bool(false)
-  ["walletversion"]=>
+  'walletversion' =>
   int(60000)
-  ["balance"]=>
+  'balance' =>
   int(0)
-  ["walletdbversion"]=>
-  int(2)
-  ["reindex"]=>
+  'walletdbversion' =>
+  int(3)
+  'reindex' =>
   bool(false)
-  ["blocks"]=>
-  int(1276)
-  ["timeoffset"]=>
+  'blocks' =>
+  int(111)
+  'chainrewards' =>
   int(0)
-  ["connections"]=>
+  'streams' =>
   int(2)
-  ["proxy"]=>
+  'timeoffset' =>
+  int(0)
+  'connections' =>
+  int(2)
+  'proxy' =>
   string(0) ""
-  ["difficulty"]=>
-  float(5.9604644775391E-8)
-  ["testnet"]=>
+  'difficulty' =>
+  double(5.9604644775391E-8)
+  'testnet' =>
   bool(false)
-  ["keypoololdest"]=>
-  int(1547304310)
-  ["keypoolsize"]=>
+  'keypoololdest' =>
+  int(1651487422)
+  'keypoolsize' =>
   int(2)
-  ["paytxfee"]=>
+  'paytxfee' =>
   int(0)
-  ["relayfee"]=>
+  'relayfee' =>
   int(0)
-  ["errors"]=>
+  'errors' =>
   string(0) ""
 }
 ##### STREAM ITEMS
-array(5) {
-  [0]=>
-  array(14) {
-    ["publishers"]=>
+T:\dev9\mc\mc-API_samples\readFromBlockchain.php:47:
+array(3) {
+  [0] =>
+  array(15) {
+    'publishers' =>
     array(1) {
-      [0]=>
-      string(38) "1Jf8ESNf3qWMJbAY7jwDax4YM3WZYvybv8NZ6M"
+      [0] =>
+      string(38) "1JUg9BYsvuzQQFQj363K6Nw4GR62UmuYUcKZDH"
     }
-    ["keys"]=>
+    'keys' =>
     array(2) {
-      [0]=>
-      string(8) "AP-key-1"
-      [1]=>
+      [0] =>
+      string(8) "AP-key-2"
+      [1] =>
       string(11) "another key"
     }
-    ["offchain"]=>
+    'offchain' =>
     bool(false)
-    ["available"]=>
+    'available' =>
     bool(true)
-    ["data"]=>
+    'data' =>
     array(1) {
-      ["json"]=>
+      'json' =>
       array(3) {
-        ["timeStamp"]=>
-        string(25) "2019-08-30T11:46:00+02:00"
-        ["client"]=>
-        string(23) "AustriaPro Lab Client 1"
-        ["data"]=>
-        array(4) {
-          ["name"]=>
-          string(9) "some Name"
-          ["value"]=>
-          int(14)
-          ["hash"]=>
-          string(71) "sha256:8527a891e224136950ff32ca212b45bc93f69fbb801c3b1ebedac52775f99e61"
-          ["remark"]=>
-          string(24) "some remark for value 14"
-        }
+        ...
       }
     }
-    ["confirmations"]=>
-    int(65)
-    ["blockhash"]=>
-    string(64) "00c5419d4534d2a606c75f05177ba6c9de2cf8dce3d9471b8411d9438a32d23f"
-    ["blockindex"]=>
+    'confirmations' =>
+    int(19)
+    'blockhash' =>
+    string(64) "00b4af2b12ea5017d3cfbb0540886a6a1b9587fb03dfc4a5395bbb24d319996b"
+    'blockheight' =>
+    int(93)
+    'blockindex' =>
     int(1)
-    ["blocktime"]=>
-    int(1567158370)
-    ["txid"]=>
-    string(64) "58cb689efce17bc7b8969dd4e2cf9ce1f07962f9c9ca25b6b6b399f79f4836a1"
-    ["vout"]=>
+    'blocktime' =>
+    int(1652093516)
+    'txid' =>
+    string(64) "e6f483fa9c086d589b2cfffd8e80d4b3c0c4c2a2ae6e1cfc291f601eaf7ab170"
+    'vout' =>
     int(0)
-    ["valid"]=>
+    'valid' =>
     bool(true)
-    ["time"]=>
-    int(1567158359)
-    ["timereceived"]=>
-    int(1567158359)
+    'time' =>
+    int(1652093504)
+    'timereceived' =>
+    int(1652093504)
   }
-  [1]=>
-  array(14) {
-    ["publishers"]=>
+  [1] =>
+  array(15) {
+    'publishers' =>
     array(1) {
-      [0]=>
-      string(38) "1Jf8ESNf3qWMJbAY7jwDax4YM3WZYvybv8NZ6M"
+      [0] =>
+      string(38) "1JUg9BYsvuzQQFQj363K6Nw4GR62UmuYUcKZDH"
     }
-    ["keys"]=>
+    'keys' =>
     array(2) {
-      [0]=>
-      string(8) "AP-key-1"
-      [1]=>
+      [0] =>
+      string(8) "AP-key-2"
+      [1] =>
       string(11) "another key"
     }
-    ["offchain"]=>
+    'offchain' =>
     bool(false)
-    ["available"]=>
+    'available' =>
     bool(true)
-    ["data"]=>
+    'data' =>
     array(1) {
-      ["json"]=>
+      'json' =>
       array(3) {
-        ["timeStamp"]=>
-        string(25) "2019-08-30T11:51:55+02:00"
-        ["client"]=>
-        string(23) "AustriaPro Lab Client 1"
-        ["data"]=>
-        array(4) {
-          ["name"]=>
-          string(9) "some Name"
-          ["value"]=>
-          int(33)
-          ["hash"]=>
-          string(71) "sha256:c6f3ac57944a531490cd39902d0f777715fd005efac9a30622d5f5205e7f6894"
-          ["remark"]=>
-          string(24) "some remark for value 33"
-        }
+        ...
       }
     }
-    ["confirmations"]=>
-    int(44)
-    ["blockhash"]=>
-    string(64) "00332b168a64df72aae81218d1b061abc13b40e5f49ceca49aab47b4e17c1172"
-    ["blockindex"]=>
+    'confirmations' =>
+    int(14)
+    'blockhash' =>
+    string(64) "00673fcf5df61740f141687050457129bb23b75c962cf7010545d781a623424c"
+    'blockheight' =>
+    int(98)
+    'blockindex' =>
     int(1)
-    ["blocktime"]=>
-    int(1567158728)
-    ["txid"]=>
-    string(64) "549f78189837f09800cc199a46655d04808fbd1d07089b371ecc908917a1c9fe"
-    ["vout"]=>
+    'blocktime' =>
+    int(1652093552)
+    'txid' =>
+    string(64) "f854e7d49b702a4ec900373b51ac791e3859d79bf889913ee92ce7299b1fe835"
+    'vout' =>
     int(0)
-    ["valid"]=>
+    'valid' =>
     bool(true)
-    ["time"]=>
-    int(1567158714)
-    ["timereceived"]=>
-    int(1567158714)
+    'time' =>
+    int(1652093548)
+    'timereceived' =>
+    int(1652093548)
   }
-  [2]=>
-  array(14) {
-    ["publishers"]=>
+  [2] =>
+  array(15) {
+    'publishers' =>
     array(1) {
-      [0]=>
-      string(38) "1Jf8ESNf3qWMJbAY7jwDax4YM3WZYvybv8NZ6M"
+      [0] =>
+      string(38) "1JUg9BYsvuzQQFQj363K6Nw4GR62UmuYUcKZDH"
     }
-    ["keys"]=>
-    array(1) {
-      [0]=>
-      string(4) "keyX"
-    }
-    ["offchain"]=>
-    bool(false)
-    ["available"]=>
-    bool(true)
-    ["data"]=>
-    array(1) {
-      ["text"]=>
-      string(60) "just some data in text mode (stored as binary in multichain)"
-    }
-    ["confirmations"]=>
-    int(23)
-    ["blockhash"]=>
-    string(64) "000304a16d60c5acab7a780bf8e6f8faa99141439cb3a71fd8354019d338386a"
-    ["blockindex"]=>
-    int(1)
-    ["blocktime"]=>
-    int(1567159120)
-    ["txid"]=>
-    string(64) "f7836a36796cc2467b88dab106a260a562e35b34b2b9d5cd12ecfbf52e249cae"
-    ["vout"]=>
-    int(0)
-    ["valid"]=>
-    bool(true)
-    ["time"]=>
-    int(1567159108)
-    ["timereceived"]=>
-    int(1567159108)
-  }
-  [3]=>
-  array(14) {
-    ["publishers"]=>
-    array(1) {
-      [0]=>
-      string(38) "1Jf8ESNf3qWMJbAY7jwDax4YM3WZYvybv8NZ6M"
-    }
-    ["keys"]=>
+    'keys' =>
     array(2) {
-      [0]=>
-      string(8) "AP-key-1"
-      [1]=>
+      [0] =>
+      string(8) "AP-key-2"
+      [1] =>
       string(11) "another key"
     }
-    ["offchain"]=>
+    'offchain' =>
     bool(false)
-    ["available"]=>
+    'available' =>
     bool(true)
-    ["data"]=>
+    'data' =>
     array(1) {
-      ["json"]=>
+      'json' =>
       array(3) {
-        ["timeStamp"]=>
-        string(25) "2019-08-30T12:02:10+02:00"
-        ["client"]=>
-        string(23) "AustriaPro Lab Client 1"
-        ["data"]=>
-        array(4) {
-          ["name"]=>
-          string(9) "some Name"
-          ["value"]=>
-          int(35)
-          ["hash"]=>
-          string(71) "sha256:9f14025af0065b30e47e23ebb3b491d39ae8ed17d33739e5ff3827ffb3634953"
-          ["remark"]=>
-          string(24) "some remark for value 35"
-        }
+        ...
       }
     }
-    ["confirmations"]=>
-    int(7)
-    ["blockhash"]=>
-    string(64) "00e64b622255496f0349631bb1f514e27f43b42b35e11d879a9d9225ddf2de54"
-    ["blockindex"]=>
+    'confirmations' =>
+    int(3)
+    'blockhash' =>
+    string(64) "00ead023301cdde6b785d3b3706176b41515c107434744c4a5fde1d659fcf7b4"
+    'blockheight' =>
+    int(109)
+    'blockindex' =>
     int(1)
-    ["blocktime"]=>
-    int(1567159330)
-    ["txid"]=>
-    string(64) "4620b115b919db8ef50a4b7020b9f6cf81f6bf32aac1fc2e71fc31f56c5c8d20"
-    ["vout"]=>
+    'blocktime' =>
+    int(1652094009)
+    'txid' =>
+    string(64) "059efce91ff7b74acb404b4c51267a5d9035445ca33ebcf52aa3f4dc8bffcfed"
+    'vout' =>
     int(0)
-    ["valid"]=>
+    'valid' =>
     bool(true)
-    ["time"]=>
-    int(1567159329)
-    ["timereceived"]=>
-    int(1567159329)
-  }
-  [4]=>
-  array(14) {
-    ["publishers"]=>
-    array(1) {
-      [0]=>
-      string(38) "1Jf8ESNf3qWMJbAY7jwDax4YM3WZYvybv8NZ6M"
-    }
-    ["keys"]=>
-    array(2) {
-      [0]=>
-      string(8) "AP-key-1"
-      [1]=>
-      string(11) "another key"
-    }
-    ["offchain"]=>
-    bool(false)
-    ["available"]=>
-    bool(true)
-    ["data"]=>
-    array(1) {
-      ["json"]=>
-      array(3) {
-        ["timeStamp"]=>
-        string(25) "2019-08-30T12:03:27+02:00"
-        ["client"]=>
-        string(23) "AustriaPro Lab Client 1"
-        ["data"]=>
-        array(4) {
-          ["name"]=>
-          string(9) "some Name"
-          ["value"]=>
-          int(95)
-          ["hash"]=>
-          string(71) "sha256:ad48ff99415b2f007dc35b7eb553fd1eb35ebfa2f2f308acd9488eeb86f71fa8"
-          ["remark"]=>
-          string(24) "some remark for value 95"
-        }
-      }
-    }
-    ["confirmations"]=>
-    int(1)
-    ["blockhash"]=>
-    string(64) "00d2598b6fef95ad0d0bade9689a24f75b55b395642294fbd32887ddc7b8e24b"
-    ["blockindex"]=>
-    int(1)
-    ["blocktime"]=>
-    int(1567159418)
-    ["txid"]=>
-    string(64) "7d0ef51edda7afa4cb41933c8995667b5665a5752829351b3f61eaf00bb337d1"
-    ["vout"]=>
-    int(0)
-    ["valid"]=>
-    bool(true)
-    ["time"]=>
-    int(1567159406)
-    ["timereceived"]=>
-    int(1567159406)
+    'time' =>
+    int(1652093994)
+    'timereceived' =>
+    int(1652093994)
   }
 }
 ##### STREAM DATA
+T:\dev9\mc\mc-API_samples\readFromBlockchain.php:60:
 array(3) {
-  ["timeStamp"]=>
-  string(25) "2019-08-30T11:46:00+02:00"
-  ["client"]=>
-  string(23) "AustriaPro Lab Client 1"
-  ["data"]=>
+  'timeStamp' =>
+  string(25) "2022-05-09T12:51:44+02:00"
+  'client' =>
+  string(23) "AustriaPro Lab Client 2"
+  'data' =>
   array(4) {
-    ["name"]=>
+    'name' =>
     string(9) "some Name"
-    ["value"]=>
-    int(14)
-    ["hash"]=>
-    string(71) "sha256:8527a891e224136950ff32ca212b45bc93f69fbb801c3b1ebedac52775f99e61"
-    ["remark"]=>
-    string(24) "some remark for value 14"
+    'value' =>
+    int(84)
+    'hash' =>
+    string(71) "sha256:44c8031cb036a7350d8b9b8603af662a4b9cdbd2f96e8d5de5af435c9c35da69"
+    'remark' =>
+    string(24) "some remark for value 84"
   }
 }
+T:\dev9\mc\mc-API_samples\readFromBlockchain.php:60:
 array(3) {
-  ["timeStamp"]=>
-  string(25) "2019-08-30T11:51:55+02:00"
-  ["client"]=>
-  string(23) "AustriaPro Lab Client 1"
-  ["data"]=>
+  'timeStamp' =>
+  string(25) "2022-05-09T12:52:27+02:00"
+  'client' =>
+  string(23) "AustriaPro Lab Client 2"
+  'data' =>
   array(4) {
-    ["name"]=>
+    'name' =>
     string(9) "some Name"
-    ["value"]=>
-    int(33)
-    ["hash"]=>
-    string(71) "sha256:c6f3ac57944a531490cd39902d0f777715fd005efac9a30622d5f5205e7f6894"
-    ["remark"]=>
-    string(24) "some remark for value 33"
+    'value' =>
+    int(62)
+    'hash' =>
+    string(71) "sha256:81b8a03f97e8787c53fe1a86bda042b6f0de9b0ec9c09357e107c99ba4d6948a"
+    'remark' =>
+    string(24) "some remark for value 62"
   }
 }
-string(60) "just some data in text mode (stored as binary in multichain)"
+T:\dev9\mc\mc-API_samples\readFromBlockchain.php:60:
 array(3) {
-  ["timeStamp"]=>
-  string(25) "2019-08-30T12:02:10+02:00"
-  ["client"]=>
-  string(23) "AustriaPro Lab Client 1"
-  ["data"]=>
+  'timeStamp' =>
+  string(25) "2022-05-09T12:59:53+02:00"
+  'client' =>
+  string(23) "AustriaPro Lab Client 2"
+  'data' =>
   array(4) {
-    ["name"]=>
+    'name' =>
     string(9) "some Name"
-    ["value"]=>
-    int(35)
-    ["hash"]=>
-    string(71) "sha256:9f14025af0065b30e47e23ebb3b491d39ae8ed17d33739e5ff3827ffb3634953"
-    ["remark"]=>
-    string(24) "some remark for value 35"
+    'value' =>
+    int(93)
+    'hash' =>
+    string(71) "sha256:6e4001871c0cf27c7634ef1dc478408f642410fd3a444e2a88e301f5c4a35a4d"
+    'remark' =>
+    string(24) "some remark for value 93"
   }
 }
-array(3) {
-  ["timeStamp"]=>
-  string(25) "2019-08-30T12:03:27+02:00"
-  ["client"]=>
-  string(23) "AustriaPro Lab Client 1"
-  ["data"]=>
-  array(4) {
-    ["name"]=>
-    string(9) "some Name"
-    ["value"]=>
-    int(95)
-    ["hash"]=>
-    string(71) "sha256:ad48ff99415b2f007dc35b7eb553fd1eb35ebfa2f2f308acd9488eeb86f71fa8"
-    ["remark"]=>
-    string(24) "some remark for value 95"
-  }
-}
-  

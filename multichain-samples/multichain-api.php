@@ -4,6 +4,7 @@ MultiChain API
 Copyright (c) 2018 baumann.at
 V 1.0 (6.10.2018)
 V 1.1 (21.11.2018): new property "timeout" for socket connection
+V 1.2 (9.5.2022): documentation for params path and timeout; read nodeversion & protocolversion in call of getinfo()
 
 Forked from EasyBitcoin-PHP, Copyright (c) 2013 Andrew LeCody
 https://github.com/aceat64/EasyMultiChain-PHP
@@ -35,11 +36,13 @@ THE SOFTWARE.
 ====================
 
 // Initialize MultiChain connection/object
-$MultiChain = new MultiChain('username','password','host','port');
+$MultiChain = new MultiChain('username','password','host','port', 'path', 'timeout');
 // Defaults are:
 //	host = localhost
 //	port = 2286
 //	proto = http
+//  path = null
+//  timeout = 10
 
 // Check, if initialization worked (i.e. curl is installed)
 if (!$MultiChain->initOK) {
@@ -64,6 +67,8 @@ $res = $MultiChain->getinfo();
 if ($MultiChain->versionMajor == 2) {
 // code, which is for new versions only ...
 }
+echo("nodeversion: $MultiChain->nodeVersion\r\n");
+echo("protocolversion: $MultiChain->protocolVersion\r\n");
 
 
 // The full response (not usually needed) is stored in $this->response
@@ -88,7 +93,8 @@ class MultiChain
     private $proto;
     private $host;
     private $port;
-    private $url;
+    private $path;
+    private $timeout;
     private $CACertificate;
 
     // Information and debugging
@@ -98,6 +104,8 @@ class MultiChain
     public $response;
     public $initOK;
     public $versionMajor;
+    public $nodeVersion;
+    public $protocolVersion;
 
     private $id = 0;
 
@@ -107,18 +115,20 @@ class MultiChain
      * @param string $host
      * @param int $port
      * @param string $proto
-     * @param string $url
+     * @param string $path
      * @param int $timeout
      */
-    public function __construct($username, $password, $host = 'localhost', $port = 2286, $url = null, $timeout = 10)
+    public function __construct($username, $password, $host = 'localhost', $port = 2286, $path = null, $timeout = 10)
     {
         $this->username      = $username;
         $this->password      = $password;
         $this->host          = $host;
         $this->port          = $port;
-        $this->url           = $url;
+        $this->path          = $path;
         $this->timeout       = $timeout;
         $this->versionMajor  = null;
+        $this->nodeVersion   = null;
+        $this->protocolVersion = null;
 
         // Set some defaults
         $this->proto         = 'http';
@@ -162,7 +172,7 @@ class MultiChain
         ));
 
         // Build the cURL session
-        $curl    = curl_init("{$this->proto}://{$this->host}:{$this->port}/{$this->url}");
+        $curl    = curl_init("{$this->proto}://{$this->host}:{$this->port}/{$this->path}");
         $options = array(
             CURLOPT_HTTPAUTH       => CURLAUTH_BASIC,
             CURLOPT_USERPWD        => $this->username . ':' . $this->password,
@@ -200,11 +210,17 @@ class MultiChain
         $this->raw_response = curl_exec($curl);
         $this->response     = json_decode($this->raw_response, true);
 
-				if ($method == 'getinfo') {
-				  if (isset($this->response['result']['version'][0])) {
-				  	$this->versionMajor = (integer) $this->response['result']['version'][0];
-				  }
-				}
+        if ($method == 'getinfo') {
+            if (isset($this->response['result']['version'][0])) {
+                $this->versionMajor = (integer) $this->response['result']['version'][0];
+            }
+            if (isset($this->response['result']['nodeversion'])) {
+                $this->nodeVersion = (integer) $this->response['result']['nodeversion'];
+            }
+            if (isset($this->response['result']['protocolversion'])) {
+                $this->protocolVersion = (integer) $this->response['result']['protocolversion'];
+            }
+        }
 
         // If the status is not 200, something is wrong
         $this->status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
@@ -253,4 +269,3 @@ class MultiChain
         return $this->response['result'];
     }
 }
-      
