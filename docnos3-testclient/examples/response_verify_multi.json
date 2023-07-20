@@ -1,0 +1,47 @@
+{
+  "success": "hash found: sha256:8daf3a72c2bea121e7f8477141bfad7787192a2e0f82680cbf83f55a070fbdbf",
+  "data": [
+    {
+      "publisher": "13VXwdarLRtV5fyP8qdWEFXebe6Ay45pgdY4Bb",
+      "txid": "11fecdbffb6f9d626c921a34d5b537ea4528e33cd074e2bf561a467c0fb52860",
+      "blockHash": "0001241892b2ac07a48e8c0587f0ba9c85dd130ed956a1b5596e0a65d1361169",
+      "blockTime": "2023-07-20T09:01:09+02:00",
+      "confirmations": 21,
+      "data": {
+        "timeStamp": "2023-07-20T09:01:05+02:00",
+        "client": "pyDemo",
+        "version": "DocNoS-v1.1",
+        "data": {
+          "id": "12345678-5f7c-4eb2-9344-b35943815ed5",
+          "hashes": {
+            "sha256": "8daf3a72c2bea121e7f8477141bfad7787192a2e0f82680cbf83f55a070fbdbf",
+            "sha512": "439eef199e5da58722f459a8e4088c842015fe0458ce27bf8bc5a3d2cdb2fb65b3a61ec3d750bbd8912edc82ffb325cafe052d20ffad5dea185dab6244f6d351"
+          },
+          "remarks": "sent from pyDemo 0.5"
+        }
+      }
+    },
+    {
+      "publisher": "13VXwdarLRtV5fyP8qdWEFXebe6Ay45pgdY4Bb",
+      "txid": "dfb1d39c80ee0922c676cc95f76f4a6a5a822174e109da727bec012ea38e6df1",
+      "blockHash": null,
+      "blockTime": null,
+      "confirmations": 0,
+      "data": {
+        "timeStamp": "2023-07-20T09:17:15+02:00",
+        "client": "pyDemo",
+        "version": "DocNoS-v1.1",
+        "data": {
+          "id": "12345678-5f7c-4eb2-9344-b35943815ed5",
+          "hashes": {
+            "sha256": "8daf3a72c2bea121e7f8477141bfad7787192a2e0f82680cbf83f55a070fbdbf",
+            "sha512": "439eef199e5da58722f459a8e4088c842015fe0458ce27bf8bc5a3d2cdb2fb65b3a61ec3d750bbd8912edc82ffb325cafe052d20ffad5dea185dab6244f6d351"
+          },
+          "remarks": "sent from pyDemo 0.5"
+        }
+      }
+    }
+  ],
+  "service": "DocNoS receiver/verify v1.6.2",
+  "infos": "client:pyDemo v:1 stream:docnos-test-1 chain:mc2b1 rpc:127.0.0.1:7222"
+}

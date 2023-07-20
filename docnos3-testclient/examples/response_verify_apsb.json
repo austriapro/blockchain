@@ -1,0 +1,43 @@
+{
+    "success": "hash found",
+    "service": "DocNoS receiver\/verify v1.40",
+    "data": [
+        {
+            "txid": "295a9c67904b0be0edb8a8474c3e0fb0dfaef5ed7d13f6f9a593284765092914",
+            "blockHash": "00df1aaee406648f3e3ba94ae488bd376320a8e1a2c11e80438e8f49ec05e674",
+            "blockTime": "2020-12-08T17:34:15+01:00",
+            "confirmations": 3,
+            "data": {
+                "metadataInternal": {
+                    "app": "unknown",
+                    "time": "1607445243000",
+                    "storageType": "JSON"
+                },
+                "metadataExternal": {
+                    "additionalMetadata": null,
+                    "user": "pyDemo",
+                    "dataType": "Blockstempel-v2",
+                    "tags": [
+                        "Blockstempel-v2",
+                        "id:1c123b9d-5f7c-4eb2-9344-b35943815ed5",
+                        "hash:sha256:2bf928c9b7877fa508487a70d387bee8b66399f3f024bf757bbd52b4ea2c3aa2",
+                        "hash:sha512:61154490bbcbd6080bfc1d7797d465f251c79d6dce2a301a3df55cce7c7ad6275d69ba6fbe7a35be64c9ff581ef04554dd42f17f7fd38375e38176372b52f79c",
+                        "hash:sha3\/512:9000b07534d4fe6f73dd8bff28d5b0b7946b80845747b8fe7b81ce2b80a284d1edba24e22441aa2f0ea235ad537570dece2b01183430cd1148a97d7acca62426"
+                    ]
+                },
+                "data": {
+                    "id": "1c123b9d-5f7c-4eb2-9344-b35943815ed5",
+                    "time": "2020-12-08T17:34:03+01:00",
+                    "hashes": {
+                        "sha256": "2bf928c9b7877fa508487a70d387bee8b66399f3f024bf757bbd52b4ea2c3aa2",
+                        "sha512": "61154490bbcbd6080bfc1d7797d465f251c79d6dce2a301a3df55cce7c7ad6275d69ba6fbe7a35be64c9ff581ef04554dd42f17f7fd38375e38176372b52f79c",
+                        "sha3\/512": "9000b07534d4fe6f73dd8bff28d5b0b7946b80845747b8fe7b81ce2b80a284d1edba24e22441aa2f0ea235ad537570dece2b01183430cd1148a97d7acca62426"
+                    },
+                    "optional": {
+                        "size": null
+                    }
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,5 @@
+{
+    "error": "hash not found: sha256:7d8028dc7273a4da78320629dd14fccc998bc9ff5a25f4152187c1404c3d9847",
+    "service": "DocNoS receiver/verify v1.6.2",
+    "infos": "client:pyDemo v:1 stream:docnos-test-1 chain:mc2b1 rpc:127.0.0.1:7222"
+}

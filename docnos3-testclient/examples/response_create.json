@@ -1,0 +1,8 @@
+{
+    "success": "OK, data published in transaction 11fecdbffb6f9d626c921a34d5b537ea4528e33cd074e2bf561a467c0fb52860",
+    "timeStamp": "2023-07-20T09:01:05+02:00",
+    "id": "12345678-5f7c-4eb2-9344-b35943815ed5",
+    "txid": "11fecdbffb6f9d626c921a34d5b537ea4528e33cd074e2bf561a467c0fb52860",
+    "service": "DocNoS receiver\/create v1.6.2",
+    "infos": "client:pyDemo v:1 stream:docnos-test-1 chain:mc2b1 rpc:127.0.0.1:7222"
+}
