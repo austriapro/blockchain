@@ -1,6 +1,6 @@
-CB, 2.5.2022
+CB, 5.8.2023
 
-Install and setup a MultiChain 2.2.1 node on docker
+Install and setup a MultiChain 2.3.3 node on docker
 ---------------------------------------------------
 
 Example: Node for AustriaPro Testchain "apro-lab-2"
