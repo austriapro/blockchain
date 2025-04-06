@@ -1,3 +1,4 @@
+
 # Example output
 
 (Java)
@@ -14,6 +15,7 @@ RESULT: {"success":"OK, data published in transaction 60a1458ed06499a29a7bc72a47
 
 ------------------------------------------------
 DocNos for - Test ... verify
+
 {Keep-Alive=[timeout=5, max=99], null=[HTTP/1.1 200 OK], Server=[Apache/2.4.18], Access-Control-Allow-Origin=[*], Connection=[Keep-Alive], Content-Length=[835], Access-Control-Allow-Headers=[content-type, x-apitoken], Date=[Sun, 06 Apr 2025 13:35:05 GMT], Content-Type=[application/json]}
 sun.net.www.protocol.https.DelegateHttpsURLConnection:https://blockchains.web-lab.at/docnos3-api/verify/?hash=sha256:bbdca52ab6a9d4e6fde17b145e54f436e2875086b955d278645bbd6ec7c47a07
 
@@ -49,7 +51,7 @@ Beautified RESULT:
     }
 Note, that the blockHash, blockTime and confirmations are not set, if verifyNotarization() is called immediately after createNotarization(). This is, because the Blocktime is e.g. 15 seconds and the data will be set, when the next block is created.
 
-Calling verifyNotatization after some time shows a result like e.g.
+Calling verifyNotatization() after some time shows a result like e.g.
 
      {
           "data": [{
@@ -78,4 +80,3 @@ Calling verifyNotatization after some time shows a result like e.g.
         }
 
 Note the difference between timeStamp (of the transaction) and the blockTime of some seconds.
-
