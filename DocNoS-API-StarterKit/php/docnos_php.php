@@ -12,7 +12,7 @@
 $URL_CREATE = 'https://blockchains.web-lab.at/docnos3-api/create/';
 $URL_VERIFY = 'https://blockchains.web-lab.at/docnos3-api/verify/';
 $API_TOKEN = 'starterKit/test/44ede16fa685b3be6b874a01a21f8fff4c6f613a4f3f6b169179fe59956bb914'; // Replace with your actual API token
-$DEFAULT_CONTENT = 'This is just some content, which is used as input example ... 123abcxyz php';
+$DEFAULT_CONTENT = 'This is just some content, which is used as input example ... 123abcxyz123 php';
 
 function create_notarization() {
     global $URL_CREATE, $API_TOKEN, $DEFAULT_CONTENT;
@@ -63,7 +63,14 @@ function create_notarization() {
     echo "RESULT: " . $response . "\n";
 }
 
-function verify_notarization() {
+/*
+Verify notarization by hash, ID, transaction ID or block hash
+verifying modes: 'hash' - verify by SHA256 hash (prefix required)
+'uuid' - verify by document ID (UUID)
+'txid' - verify by transaction ID       
+'blockHash' - verify by block hash
+*/
+function verify_notarization($verify_mode = 'hash') {
     global $URL_VERIFY, $API_TOKEN, $DEFAULT_CONTENT;
 
     echo "------------------------------------------------\n";
@@ -76,21 +83,36 @@ function verify_notarization() {
     $http_headers = ['Accept' => 'application/json', 'X-ApiToken' => $API_TOKEN];
 
     // Search for specific hash (prefix required)
+    $description = 'Search by SHA256 hash';
     $key = 'hash';
     $value = 'sha256:' . $sha256_hash_to_verify;
 
-    // Example: Search for an ID (UUID)
-    // $key = 'id';
-    // $value = 'id:12345678-5f7c-4eb2-9344-b35943815ed5';
+    if ($verify_mode === 'uuid') {
+        // Search for an ID (UUID)
+        $description = 'Search by document ID (UUID)';
+        $key = 'id';
+        $value = 'id:12345678-5f7c-4eb2-9344-b35943815ed5';
+    } elseif ($verify_mode === 'txid') {
+        // Search by transaction ID 
+        $description = 'Search by transaction ID';
+        $key = 'txid';
+        $value = '1db6679854fefe58f7feb970d0e411512a8b0ed3426e1735d52834679771cf6e';
+    } elseif ($verify_mode === 'blockHash') {
+        // Search by block hash (new in v1.6.x)
+        $description = 'Search by block hash (new in v1.6.x)';
+        $key = 'blockHash';
+        $value = '00d3105be68ab5e8bded411a5b34145c7458a3e3c57d0b89660889daa668b77b';
+    }
 
-    // Example: Search by transaction ID
-    // $key = 'txid';
-    // $value = '8877873041300b8ce01b0429523764e26b34422e9cfa7df532fd464a7ce89b03';
-
-    // Example: Search by block hash (new in v1.6.x)
-    // $key = 'blockHash';
-    // $value = '00a72a6c434c46a334c0101698c6124c13b01675f2ade6b1281d00dc1827457b';
-
+    // Send GET request
+    $query = http_build_query([$key => $value]);
+    $options = [
+        'http' => [
+            'header' => implode("\r\n", array_map(function($key, $value) { return "$key: $value"; }, array_keys($http_headers), $http_headers)),
+            'method' => 'GET',
+            'ignore_errors' => true,
+        ],
+    ];
     // Send GET request
     $query = http_build_query([$key => $value]);
     $options = [
@@ -104,6 +126,7 @@ function verify_notarization() {
     $response = file_get_contents($URL_VERIFY . '?' . $query, false, $context);
     $response_headers = $http_response_header;
 
+    echo "Search mode: $description\n";
     echo implode("\n", $response_headers) . "\n";
     echo "Raw RESULT: " . $response . "\n";
 
@@ -116,5 +139,10 @@ function verify_notarization() {
 
 // Execute test functions
 create_notarization();
-verify_notarization();
+
+verify_notarization(); // Default: verify by hash
+verify_notarization('uuid'); // Verify by document ID (UUID)  
+verify_notarization('txid'); // Verify by transaction ID
+verify_notarization('blockHash'); // Verify by block hash
+
 ?>
