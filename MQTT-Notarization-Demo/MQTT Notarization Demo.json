@@ -1,0 +1,169 @@
+{
+  "name": "MQTT Notarization Demo",
+  "nodes": [
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://blockchains.web-lab.at:443/datnos-api/",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "=json",
+        "bodyParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "jsonBody": "={{ $json }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -460,
+        140
+      ],
+      "id": "a634537b-8348-498f-839f-fb3c750aeebc",
+      "name": "Blockchain Notarization",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "NZIvdkv7uEhSg7vA",
+          "name": "Header Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://test.baumann.at/ha/logger/",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json.toJsonString() }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -200,
+        -80
+      ],
+      "id": "51b68895-c872-4108-b4ba-565f76d7f84e",
+      "name": "Log-Server",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "topics": "hacb/random/sensors/#",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mqttTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1320,
+        60
+      ],
+      "id": "3d9614ac-2c9c-4d12-9faf-382c1f8a9d6a",
+      "name": "MQTT Trigger",
+      "credentials": {
+        "mqtt": {
+          "id": "60Wkwam2WVqyNQiK",
+          "name": "MQTT account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n  \"keys\": [\"n8n-automation\", \"mqtt-demo\"],\n  \"data\": \n    {{  $json.toJsonString() }}\n}",
+        "options": {
+          "dotNotation": false
+        }
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -800,
+        60
+      ],
+      "id": "cc4a0685-fd87-4601-861e-8dc1306789d8",
+      "name": "DatNos Request"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n  \"sensorValue\": {{ $json.message.parseJson().sensorValue }},\n  \"sensorName\": \"{{ $json.message.parseJson().sensorName }}\",\n  \"comment\": \"DEMO: notarized by n8n, triggered by MQTT\"\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1060,
+        60
+      ],
+      "id": "560d215a-b3f1-4e58-986f-ed8ab47cdff8",
+      "name": "Build data structure"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Blockchain Notarization": {
+      "main": [
+        [
+          {
+            "node": "Log-Server",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MQTT Trigger": {
+      "main": [
+        [
+          {
+            "node": "Build data structure",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DatNos Request": {
+      "main": [
+        [
+          {
+            "node": "Log-Server",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Blockchain Notarization",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build data structure": {
+      "main": [
+        [
+          {
+            "node": "DatNos Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "f67aeb2a-15aa-47c4-93d3-911889b24320",
+  "meta": {
+    "instanceId": "52a85e6884c706365658838f4ade352c94847eea0cfad163f4ad7c845852647a"
+  },
+  "id": "xS1TlC1nUz2aTwrj",
+  "tags": []
+}
