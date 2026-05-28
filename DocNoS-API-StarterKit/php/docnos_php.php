@@ -5,14 +5,15 @@
  * Test functions for DocNoS API.
  *
  * Author: Chris Baumann <c.baumann@baumann.at>
- * Version: v0.7.0 2025/03/10
+ * Version: v0.8.0 2026/03/28
  */
 
 // Configuration
 $URL_CREATE = 'https://blockchains.web-lab.at/docnos3-api/create/';
 $URL_VERIFY = 'https://blockchains.web-lab.at/docnos3-api/verify/';
 $API_TOKEN = 'starterKit/test/44ede16fa685b3be6b874a01a21f8fff4c6f613a4f3f6b169179fe59956bb914'; // Replace with your actual API token
-$DEFAULT_CONTENT = 'This is just some content, which is used as input example ... 123abcxyz123 php';
+
+$DEFAULT_CONTENT = 'This is just some content, which is used as input example ... 123abcxyz123456 php NotarizeIfNew Test!';
 
 function create_notarization() {
     global $URL_CREATE, $API_TOKEN, $DEFAULT_CONTENT;
@@ -25,11 +26,11 @@ function create_notarization() {
     $sha512_hash = hash('sha512', $DEFAULT_CONTENT);
 
     // Optional UUID for document ID
-    $uuid = '12345678-5f7c-4eb2-9344-b35943815ed5';
+    $uuid = '12345678-5f7c-4eb2-9344-b35943815e07';
 
     // Prepare request data
     $hashes = ['sha256' => $sha256_hash, 'sha512' => $sha512_hash];
-    $request = ['id' => $uuid, 'hashes' => $hashes, 'remarks' => 'sent from starterKit (PHP) 0.7.0'];
+    $request = ['id' => $uuid, 'hashes' => $hashes, 'notarizeIfNew' => true, 'remarks' => 'sent from starterKit (PHP) 0.8.0'];
 
     // Convert request to JSON
     $post_data = json_encode($request);

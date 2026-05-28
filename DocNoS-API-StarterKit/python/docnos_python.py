@@ -4,7 +4,7 @@ DocNoS "StarterKit" in Python
 Test functions for DocNoS API.
 
 Author: Chris Baumann <c.baumann@baumann.at>
-Version: v0.7.0 2025/03/10
+Version: v0.8.0 2026/03/28
 """
 
 import hashlib
@@ -16,7 +16,7 @@ import sys
 URL_CREATE = 'https://blockchains.web-lab.at/docnos3-api/create/'
 URL_VERIFY = 'https://blockchains.web-lab.at/docnos3-api/verify/'
 API_TOKEN = 'starterKit/test/44ede16fa685b3be6b874a01a21f8fff4c6f613a4f3f6b169179fe59956bb914'  # Replace with your actual API token
-DEFAULT_CONTENT = 'This is just some content, which is used as input example ... 123abcxyz'
+DEFAULT_CONTENT = 'This is just some content, which is used as input example ... 123abcxyz 123456 python NotarizeIfNew Test!'
 
 
 def create_notarization():
@@ -31,11 +31,11 @@ def create_notarization():
     sha512_hash = hashlib.sha512(DEFAULT_CONTENT.encode('utf-8')).hexdigest()
 
     # Optional UUID for document ID
-    uuid = '12345678-5f7c-4eb2-9344-b35943815ed5'
+    uuid = '12345678-5f7c-4eb2-9344-b35943815e07'
 
     # Prepare request data
     hashes = {'sha256': sha256_hash, 'sha512': sha512_hash}
-    request = {'id': uuid, 'hashes': hashes, 'remarks': 'sent from starterKit (Python) 0.7.0'}
+    request = {'id': uuid, 'hashes': hashes, 'notarizeIfNew': True, 'remarks': 'sent from starterKit (Python) 0.8.0'}
 
     # Convert request to JSON
     post_data = json.dumps(request)

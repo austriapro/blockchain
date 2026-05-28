@@ -15,7 +15,7 @@ public class DocNoSStarterKit {
     private static final String URL_CREATE = "https://blockchains.web-lab.at/docnos3-api/create/";
     private static final String URL_VERIFY = "https://blockchains.web-lab.at/docnos3-api/verify/";
     private static final String API_TOKEN = "starterKit/test/44ede16fa685b3be6b874a01a21f8fff4c6f613a4f3f6b169179fe59956bb914"; // Replace with your actual API token
-    private static final String DEFAULT_CONTENT = "This is just some content, which is used as input example ... 123abcxyz java";
+    private static final String DEFAULT_CONTENT = "This is just some content, which is used as input example ... 123abcxyz 123456 java NotarizeIfNew Test!";
 
     public static void main(String[] args) {
         createNotarization();
@@ -29,7 +29,7 @@ public class DocNoSStarterKit {
         String sha256Hash = calculateHash(DEFAULT_CONTENT, "SHA-256");
         String sha512Hash = calculateHash(DEFAULT_CONTENT, "SHA-512");
 
-        String uuid = "12345678-5f7c-4eb2-9344-b35943815ed5";
+        String uuid = "12345678-5f7c-4eb2-9344-b35943815e07"; // Optional UUID for document ID
 
         JSONObject hashes = new JSONObject();
         hashes.put("sha256", sha256Hash);
@@ -38,7 +38,8 @@ public class DocNoSStarterKit {
         JSONObject request = new JSONObject();
         request.put("id", uuid);
         request.put("hashes", hashes);
-        request.put("remarks", "sent from starterKit (Java) 0.7.0");
+        request.put("notarizeIfNew", true);
+        request.put("remarks", "sent from starterKit (Java) 0.8.0");
 
         String postData = request.toString();
         System.out.println("JSON-Request:");
@@ -80,7 +81,7 @@ public class DocNoSStarterKit {
 
     private static void verifyNotarization() {
         System.out.println("------------------------------------------------");
-        System.out.println("DocNos for - Test ... verify");
+        System.out.println("DocNos - Test ... verify");
 
         String sha256HashToVerify = calculateHash(DEFAULT_CONTENT, "SHA-256");
 

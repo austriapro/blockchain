@@ -1,7 +1,7 @@
 // DocNoS "StarterKit" in JavaScript
 // Test functions for DocNoS API.
 // Author: Chris Baumann <c.baumann@baumann.at>
-// Version: v0.7.1 2026/01/20
+// Version: v0.8.0 2026/05/26
 
 /*
 How to run:
@@ -17,7 +17,7 @@ const URL_CREATE = 'https://blockchains.web-lab.at/docnos3-api/create/';
 const URL_VERIFY = 'https://blockchains.web-lab.at/docnos3-api/verify/';
 const API_TOKEN = 'starterKit/test/44ede16fa685b3be6b874a01a21f8fff4c6f613a4f3f6b169179fe59956bb914'; // Replace with your actual API token
 
-const DEFAULT_CONTENT = 'This is just some content, which is used as input example ... 123abcxyzjs';
+const DEFAULT_CONTENT = 'This is just some content, which is used as input example ... 123abcxyz 123456 javascript NotarizeIfNew Test!';
 
 function createNotarization() {
     console.log('------------------------------------------------');
@@ -28,14 +28,15 @@ function createNotarization() {
     const sha512Hash = crypto.createHash('sha512').update(DEFAULT_CONTENT, 'utf8').digest('hex');
 
     // Optional UUID for document ID
-    const uuid = '12345679-5f7c-4eb2-9344-b35943815ed5';
+    const uuid = '12345678-5f7c-4eb2-9344-b35943815e07';
 
     // Prepare request data
     const hashes = { sha256: sha256Hash, sha512: sha512Hash };
     const request = {
         id: uuid,
         hashes: hashes,
-        remarks: 'sent from starterKit (JavaScript) 0.7.1'
+        notarizeIfNew: true,
+        remarks: 'sent from starterKit (JavaScript) 0.8.0'
     };
 
     const postData = JSON.stringify(request);
@@ -83,7 +84,7 @@ function verifyNotarization() {
 
     // Example: Search by ID
     // const key = 'id';
-    // const value = 'id:12345679-5f7c-4eb2-9344-b35943815ed5';
+    // const value = 'id:12345678-5f7c-4eb2-9344-b35943815e07';
 
     // Example: Search by transaction ID
     // const key = 'txid';
